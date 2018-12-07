@@ -15,25 +15,6 @@ html
 body
     background-image url('../img/backloop.png')
     background-repeat repeat
-    .mean-bar
-        height 50px
-        background: #FFFAF1
-        .mean-nav
-            background: #FFFAF1
-            li:last-child
-                border-bottom: 1px solid #678274
-            ul li a
-                color: #678274
-                font-size: 20px
-                text-align: center
-                border-top 1px solid #678274
-
-        .meanmenu-reveal 
-            margin-top: 4px
-            span
-                background: #678274
-        .meanclose
-            color: #678274
     header
         margin auto
         width 960px
@@ -42,8 +23,6 @@ body
         align-items: center
         justify-content: space-between
         alin-items center
-        @media(max-width: 680px)
-            display: none
         .sitelogo
             display: flex
             align-items: center
@@ -89,9 +68,6 @@ body
             .nav_05
                 background: $nav05
 
-
-                
-
 .top_visual
     background: #bcf3ff
     width: 100vw
@@ -101,7 +77,6 @@ body
     display: flex
     justify-content: space-around
     align-items: center
-    flex-wrap: wrap
     background: $about
     width: 920px
     height 660px
@@ -109,34 +84,21 @@ body
     border-bottom: 30px solid #d7b28c
     margin-top: 100px
     margin-bottom: 100px
-    @media(max-width: 680px)
-        width: 100%
-        height auto
     .box_twitter
         width: 400px
         height 500px
-        @media(max-width: 680px)
-            width: 90%
-            margin-bottom: 10px
         .twitter-timeline
             height 100%
             width: 100%
-
     .box_about
         width: 400px
         height 500px
-        @media(max-width: 680px)
-            width: 100%
-            p
-                width: 90%
-                margin: auto
         h2
             color: #ff9a7a
             margin-top: 100px
             font-size 2.4rem
             font-family: "M PLUS Rounded 1c"
             text-align: center
-
         p
             color: white
             font-size 2rem
@@ -144,8 +106,6 @@ body
             text-align: left
             margin-top 20px
             font-family: "Noto Sans JP";
-            @media(max-width: 680px)
-                text-align: center
 
 footer
     height 100px
@@ -155,8 +115,6 @@ footer
     flex-direction: column
     justify-content: space-around
     position: relative
-    @media(max-width: 680px)
-        width: 100%
     .sitelogo
         display: flex
         align-items: center
@@ -166,13 +124,6 @@ footer
         position: absolute
         left 50px
         bottom: 50px
-        @media(max-width: 680px)
-
-            justify-content: center
-            top -30px
-            bottom 0 
-            left 0
-            right 0
         img
             width auto
             height 50px
@@ -185,8 +136,6 @@ footer
         display: flex
         justify-content: center
         align-items: center
-        @media(max-width: 680px)
-            display: none
         nav ul
             display: flex
             justify-content: center
@@ -255,8 +204,8 @@ footer
     align-items: center
     justify-items: center
     .profile_flex
-        margin: auto
-        width: 320px
+        display: flex
+        width: 300px
         
     .profile_box
         display: flex
@@ -265,7 +214,7 @@ footer
             font-size: 2rem
             margin-right: 10px
             text-align: right
-            width: 120px
+            width: 150px
             line-height: 50px
         p
             font-family: "Noto Sans JP"
