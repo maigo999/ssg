@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>スタイルシートガールズ | TOP</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/filipelinhares/ress/master/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+</head>
+<body>
+    <header>
+
+        <h1 class="sitelogo"><img src="img/ssglogo.svg" alt=""></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav_01">TOP</a></li>
+                <li><a href="character01.html" class="nav_02">キャラクター</a></li>
+                <li><a href="word01.html" class="nav_03">言語紹介</a></li>
+                <li><a href="wallpaper.html" class="nav_04">壁紙</a></li>
+                <li><a href="contact.html" class="nav_05">  お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="character_title">
+            <h2>言語紹介</h2>
+        </div>
+        <div class="character_list">
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+        <div class="word_box">
+            <h4>〇〇の特徴</h4>
+            <p>aaaa</p>
+        </div>
+        <div class="word_box">
+            <h4>インストール</h4>
+            <p>aaaa</p>
+        </div>
+        <h4 class="sub_title">機能紹介</h4>
+
+        <div class="word_box">
+                <h4>変数</h4>
+                <p>aaaa</p>
+        </div>
+        <div class="word_box">
+                <h4>if文</h4>
+                <p>aaaa</p>
+        </div>
+        <div class="word_box">
+                <h4>for文</h4>
+                <p>aaaa</p>
+        </div>
+    </main>
+
+    <footer>
+
+        <div class="footer_top">
+
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav_01">TOP</a></li>
+                    <li><a href="Character.html" class="nav_02">キャラクター</a></li>
+                    <li><a href="word01.html" class="nav_03">言語紹介</a></li>
+                    <li><a href="wallpaper.html" class="nav_04">壁紙</a></li>
+                    <li><a href="contact.html" class="nav_05">  お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sitelogo">
+            <img src="img/ssglogo.svg" alt="logo">
+        </div>
+        <p><small>© 2018 StyleSheetGirls</small></p>
+    </footer>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('header nav').meanmenu({
+            meanMenuCloseSize: "32px",
+            meanRevealPosition: "center",
+            meanScreenWidth: "680", // 表示させるウィンドウサイズ(ブレイクポイント)
+        });
+        });
+    </script>
+</body>
+
+</html>

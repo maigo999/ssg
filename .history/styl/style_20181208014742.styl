@@ -1,0 +1,384 @@
+$nav01 = #ff7ca4
+$nav02 = #62bd66
+$nav03 = #feb67e
+$nav04 = #ffd261
+$nav05 = #77adff
+$about = #5f8373
+@font-face
+    font-family: 'corp'
+    src: url("../font/corp_round_v1.ttf")
+
+
+html
+    font-size 62.5%
+
+body
+    background-image url('../img/backloop.png')
+    background-repeat repeat
+    .mean-bar
+        height 50px
+        background: #FFFAF1
+        .mean-nav
+            background: #FFFAF1
+            li:last-child
+                border-bottom: 1px solid #678274
+            ul li a
+                color: #678274
+                font-size: 20px
+                text-align: center
+                border-top 1px solid #678274
+
+        .meanmenu-reveal 
+            margin-top: 4px
+            span
+                background: #678274
+        .meanclose
+            color: #678274
+    header
+        margin auto
+        width 960px
+        height 100px
+        display flex
+        align-items: center
+        justify-content: space-between
+        alin-items center
+        @media(max-width: 680px)
+            display: none
+        .sitelogo
+            display: flex
+            align-items: center
+            margin-left: 10px
+            height 80px
+            width: auto
+            img
+                width auto
+                height 80px
+        nav ul
+            list-style: none
+            display: flex
+            align-items: center
+            justify-content: space-around
+            width: 700px
+            li
+                height 80px
+                width: 129px
+                font-family: corp
+                a
+                    width: 100%
+                    height 100%
+                    text-decoration: none
+                    color: white
+                    border-radius: 10px
+                    border: 5px solid white
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    font-size 1.8rem
+                    &:hover
+                        filter: saturate(50%);
+                        transition 0.5s
+
+            .nav_01
+                background: $nav01
+            .nav_02
+                background: $nav02
+            .nav_03
+                background: $nav03
+            .nav_04
+                background: $nav04
+            .nav_05
+                background: $nav05
+
+
+                
+
+.top_visual
+    background: #bcf3ff
+    width: 100vw
+    height 100vh
+
+.top_box
+    display: flex
+    justify-content: space-around
+    align-items: center
+    flex-wrap: wrap
+    background: $about
+    width: 920px
+    height 660px
+    margin: auto
+    border-bottom: 30px solid #d7b28c
+    margin-top: 100px
+    margin-bottom: 100px
+    @media(max-width: 680px)
+        width: 100%
+        height auto
+    .box_twitter
+        width: 400px
+        height 500px
+        @media(max-width: 680px)
+            width: 90%
+            margin-bottom: 10px
+        .twitter-timeline
+            height 100%
+            width: 100%
+
+    .box_about
+        width: 400px
+        height 500px
+        @media(max-width: 680px)
+            width: 100%
+            p
+                width: 90%
+                margin: auto
+        h2
+            color: #ff9a7a
+            margin-top: 100px
+            font-size 2.4rem
+            font-family: "M PLUS Rounded 1c"
+            text-align: center
+
+        p
+            color: white
+            font-size 2rem
+            line-height 50px
+            text-align: left
+            margin-top 20px
+            font-family: "Noto Sans JP";
+            @media(max-width: 680px)
+                text-align: center
+
+footer
+    height 100px
+    width: 960px
+    margin: auto
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    position: relative
+    @media(max-width: 680px)
+        width: 100%
+    .sitelogo
+        display: flex
+        align-items: center
+        margin-left: 10px
+        height 50px
+        width: auto
+        position: absolute
+        left 50px
+        bottom: 50px
+        @media(max-width: 680px)
+            justify-content: center
+            top -30px
+            bottom 0 
+            left 0
+            right 0
+        img
+            width auto
+            height 50px
+    p
+        display: flex
+        align-items: flex-end
+        justify-content: center
+        text-align: center
+    .footer_top
+        display: flex
+        justify-content: center
+        align-items: center
+        @media(max-width: 680px)
+            display: none
+        nav ul
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 500px
+            li
+                list-style none
+                text-align: center
+                width: 100px
+                color: black
+                &:not(:last-child)
+                    border-right: 2px solid gray
+                a
+                    text-decoration: none
+                    color: black
+
+.character_title
+    font-size 2.6rem
+    font-family: corp
+    justify-content: center
+    display: flex
+    padding-top: 100px
+    @media(max-width: 680px)
+        font-size 1.8rem
+        width: 100%
+        padding-top: 30px
+
+.character_list
+    width: 960px
+    height: 100px
+    margin: auto
+    margin-top: 80px
+    @media(max-width: 680px)
+        width: 400px
+        height: auto
+        margin-top: 20px
+    ul
+        display flex
+        justify-content: center
+        @media(max-width: 680px)
+            flex-wrap: wrap
+        li
+            width 100px
+            height 100px
+            list-style none
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            margin: 0 5px 0 5px
+            a
+                width: 100%
+                height 100%
+                border-radius 50%
+                text-decoration: none
+                background: white
+                border: 5px solid #ffd1ae
+
+.character_box
+    display: flex
+    justify-content: center
+    align-items: center
+    border-top: 50px
+    width: 960px
+    height 700px
+    margin: auto
+    @media(max-width: 680px)
+        width: 100%
+        height: auto
+        flex-wrap: wrap-reverse
+
+.character_profile
+    width: 350px
+    height: 480px
+    background: white
+    border-radius: 20px;
+    border: #ffd1ae 3px solid
+    margin-right: 10px
+    display: flex
+    align-items: center
+    justify-items: center
+    @media(max-width: 680px)
+        width: 90%
+        height auto
+        padding: 20px 0 20px 0
+        margin-right: 0
+        margin-bottom: 100px
+        margin-top: 10px
+    .profile_flex
+        margin: auto
+        width: 320px
+        
+    .profile_box
+        display: flex
+        h3
+            font-family: "M PLUS Rounded 1c"
+            font-size: 2rem
+            margin-right: 10px
+            text-align: right
+            width: 120px
+            line-height: 50px
+        p
+            font-family: "Noto Sans JP"
+            font-size: 1.6rem
+            text-align: left
+            line-height: 50px
+
+.character_visual
+    width: 400px
+    height 600px
+    border-radius: 20px
+    border: 5px dotted #ffd1ae
+    background: rgba(255,255,255,0.8)
+    margin-left: 10px
+    @media(max-width: 680px)
+        width: 90%
+        margin-left: 0
+        margin-top: 30px
+
+.word_box
+    width: 960px;
+    height: 500px
+    background: white
+    margin: 50px auto 50px auto
+    border: #ffd1ae 5px solid
+    border-radius: 20px
+    position relative
+    h4
+        font-size: 3.4rem
+        font-weight: bold
+        position: absolute
+        left 70px
+        top -30px
+        font-family: "M PLUS Rounded 1c"
+
+.sub_title
+    font-size: 3.6rem
+    font-family: corp
+    text-align: center
+    margin-bottom: 50px
+
+.contact_box
+    height 900px
+    width: 960px
+    margin: auto
+    background: rgba(255 255 255 0.7);
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-bottom: 50px
+    margin-top: 50px
+    border-radius: 20px;
+    border: #ffd1ae 5px solid
+    @media(max-width: 680px)
+        width: 95%
+    h4
+        font-size: 2.6rem
+        text-align: center
+        padding-top: 50px
+        font-family: "M PLUS Rounded 1c"
+    a
+        width: 200px
+        height auto
+        margin-top: 20px
+        img 
+            width: 200px
+            height auto
+        &:hover
+            opacity 0.5
+            transition: 0.5s
+    p
+        font-size: 2rem
+        font-family: "Noto Sans JP"
+
+.wallpaper_box
+    background: rgba(255,255,255,0.8)
+    width: 960px
+    margin auto
+    height: 1000px
+    border-radius: 20px;
+    border: #ffd1ae 5px solid
+    .wallpaper_thumbnail
+        width: 640px
+        height 360px
+        background-image: url("../img/wallpaper.png")
+        object-fit: fill
+        border: 10px solid pink
+        border-radius: 20px
+        margin: 100px auto 50px auto
+    .download_link
+        width: 100%
+        height: auto
+        ul
+            list-style: none
+            display: flex
+
