@@ -17,33 +17,6 @@
 
         <h1 class="sitelogo"><img src="img/ssglogo.svg" alt=""></h1>
         <nav>
-                <ul>
-                    <li><a href="index.html" class="nav_01">TOP</a></li>
-                    <li><a href="character01.html" class="nav_02">キャラクター</a></li>
-                    <li><a href="#" class="nav_03">ComingSoon</a></li>
-                    <li><a href="wallpaper.html" class="nav_04">壁紙</a></li>
-                    <li><a href="contact.html" class="nav_05">  お問い合わせ</a></li>
-                </ul>
-            </nav>
-    </header>
-<main>
-    <div class="character_title">
-        <h2>お問い合わせ</h2>
-    </div>
-
-    <div class="contact_box">
-        <h4>メール</h4>
-        <a href="mailto:a15dc040@dhw.ac.jp">
-            <img src="/img/mail.svg" alt="">
-        </a>
-        <p>メールソフトが立ち上がります</p>
-    </div>
-</main>
-
-<footer>
-
-    <div class="footer_top">
-        <nav>
             <ul>
                 <li><a href="index.html" class="nav_01">TOP</a></li>
                 <li><a href="Character01.html" class="nav_02">キャラクター</a></li>
@@ -52,24 +25,53 @@
                 <li><a href="contact.html" class="nav_05">  お問い合わせ</a></li>
             </ul>
         </nav>
+    </header>
+<main>
+    <div class="top_visual">
+
+    </div>
+
+
+    <div class="top_box">
+        <div class="box_about">
+            <h2>スタイルシートガールズとは。</h2>
+            <p>CSSプリプロセッサの認知度をあげよう！<br>そんな目的で作られた部活<br>"スタイルシート部"<br>そこに集う少女たちこそ<br>スタイルシートガールズなのだ。</p>
+        </div>
+        <div class="box_twitter">
+                <a class="twitter-timeline" width="100%" height="100%" href="https://twitter.com/StyleSheetGirls?ref_src=twsrc%5Etfw">Tweets by StyleSheetGirls</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+</main>
+<footer>
+
+    <div class="footer_top">
+
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav_01">TOP</a></li>
+                <li><a href="character01.html" class="nav_02">キャラクター</a></li>
+                <li><a href="#" class="nav_03">ComingSoon</a></li>
+                <li><a href="wallpaper.html" class="nav_04">壁紙</a></li>
+                <li><a href="contact.html" class="nav_05">  お問い合わせ</a></li>
+            </ul>
+        </nav>
     </div>
     <div class="sitelogo">
-        <img src="img/ssglogo.svg" alt="logo">
+            <img src="img/ssglogo.svg" alt="logo">
     </div>
     <p><small>© 2018 StyleSheetGirls</small></p>
 </footer>
+
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="js/jquery.meanmenu.min.js"></script>
 <script>
     $(document).ready(function() {
     $('header nav').meanmenu({
         meanMenuCloseSize: "32px",
-        meanRevealPosition: "center",
-        meanMenuContainer: 'body',
+        meanRevealPosition: "right",
         meanScreenWidth: "680", // 表示させるウィンドウサイズ(ブレイクポイント)
     });
     });
 </script>
 </body>
-
 </html>

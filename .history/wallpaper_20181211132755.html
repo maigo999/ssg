@@ -10,40 +10,12 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/meanmenu.min.css">
-
 </head>
 <body>
-    <header>
+<header>
 
-        <h1 class="sitelogo"><img src="img/ssglogo.svg" alt=""></h1>
-        <nav>
-                <ul>
-                    <li><a href="index.html" class="nav_01">TOP</a></li>
-                    <li><a href="character01.html" class="nav_02">キャラクター</a></li>
-                    <li><a href="#" class="nav_03">ComingSoon</a></li>
-                    <li><a href="wallpaper.html" class="nav_04">壁紙</a></li>
-                    <li><a href="contact.html" class="nav_05">  お問い合わせ</a></li>
-                </ul>
-            </nav>
-    </header>
-<main>
-    <div class="character_title">
-        <h2>お問い合わせ</h2>
-    </div>
-
-    <div class="contact_box">
-        <h4>メール</h4>
-        <a href="mailto:a15dc040@dhw.ac.jp">
-            <img src="/img/mail.svg" alt="">
-        </a>
-        <p>メールソフトが立ち上がります</p>
-    </div>
-</main>
-
-<footer>
-
-    <div class="footer_top">
-        <nav>
+    <h1 class="sitelogo"><img src="img/ssglogo.svg" alt=""></h1>
+    <nav>
             <ul>
                 <li><a href="index.html" class="nav_01">TOP</a></li>
                 <li><a href="Character01.html" class="nav_02">キャラクター</a></li>
@@ -52,6 +24,49 @@
                 <li><a href="contact.html" class="nav_05">  お問い合わせ</a></li>
             </ul>
         </nav>
+</header>
+<main>
+    <div class="character_title">
+                <h2>壁紙</h2>
+            </div>
+    <div class="wallpaper_box_PC">
+        <div class="wallpaper_thumbnail">
+            <img src="img/wallpaper.png" alt="">
+        </div>
+        <div class="download_link">
+        <ul>
+            <li><a href="#">1920×1080</a></li>
+            <li><a href="#">1280×720 </a></li>
+            <li><a href="#">1680×1050</a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="wallpaper_box_SP">
+            <div class="wallpaper_thumbnail">
+                <img src="img/wallpaper.png" alt="">
+            </div>
+            <div class="download_link">
+            <ul>
+                <li><a href="#">iPhoneX</a></li>
+                <li><a href="#">iPhone8</a></li>
+                <li><a href="#">Android</a></li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer>
+
+    <div class="footer_top">
+
+            <nav>
+                    <ul>
+                        <li><a href="index.html" class="nav_01">TOP</a></li>
+                        <li><a href="character01.html" class="nav_02">キャラクター</a></li>
+                        <li><a href="#" class="nav_03">ComingSoon</a></li>
+                        <li><a href="wallpaper.html" class="nav_04">壁紙</a></li>
+                        <li><a href="contact.html" class="nav_05">  お問い合わせ</a></li>
+                    </ul>
+                </nav>
     </div>
     <div class="sitelogo">
         <img src="img/ssglogo.svg" alt="logo">
@@ -65,7 +80,6 @@
     $('header nav').meanmenu({
         meanMenuCloseSize: "32px",
         meanRevealPosition: "center",
-        meanMenuContainer: 'body',
         meanScreenWidth: "680", // 表示させるウィンドウサイズ(ブレイクポイント)
     });
     });
