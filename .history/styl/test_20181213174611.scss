@@ -1,0 +1,10 @@
+
+$check: true;
+
+.foo{
+    @if $check == true {
+        width: 100%;
+    }@else{
+        width: 50%;
+    }
+}

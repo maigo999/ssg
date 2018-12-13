@@ -1,0 +1,8 @@
+.iterate(@i) when not (@i < 10) { }
+.iterate(@i) when (@i < 10) {
+
+
+    .iterate(@i + 1); // 次のループへ
+}
+
+.iterate(0); // ループを実行

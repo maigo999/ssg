@@ -1,0 +1,8 @@
+.num(@n) when (@n < 19) {
+    .fizz@{n} {
+      width: 1px * @n;
+    }
+    .num(@n + 1);
+}
+
+.num(1);

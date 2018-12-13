@@ -1,0 +1,11 @@
+check = true
+
+.foo
+    if check
+        width: 100%
+    else
+        width: 50%
+
+    for num in 1..3
+        .mg-{num * 5}
+        margin num * 5px

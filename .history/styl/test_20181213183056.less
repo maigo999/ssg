@@ -1,0 +1,11 @@
+@iterations: 3;
+
+.num (@i) when (@i > 0) {
+  .fizz@{i}{
+    content: "@{i}";
+  }
+  .num(@i - 1);
+}
+
+.num(@iterations);
+

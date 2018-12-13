@@ -1,0 +1,12 @@
+.aaa(@i) when not (@i < 101) {}
+.aaa(@i) when (@i < 101) {
+    @pixel: “@{i}px”;
+    .mb@{i} {
+        margin-bottom: ~”@{pixel}”;
+}
+    .mt@{i} {
+        margin-top: ~”@{pixel}”;
+}
+    .aaa(@i + 5);
+}
+.aaa(5);

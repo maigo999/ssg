@@ -1,0 +1,8 @@
+.myloop(@n) when (@n > 0) {
+    .col@{n} {
+      width: 100px * @n;
+    }
+    .myloop(@n - 1);
+  }
+  
+  .myloop(3);

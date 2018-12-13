@@ -1,0 +1,6 @@
+@for $num from 1 to 3 {
+    .fizz{$num}{
+        margin: {$num}px
+    }
+    
+}

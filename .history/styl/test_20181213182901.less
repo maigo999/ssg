@@ -1,0 +1,11 @@
+@iterations: 15;
+
+.mixin-loop (@i) when (@i > 0) {
+  div:nth-child(@{i}):after {
+    content: "@{i}";
+  }
+  .mixin-loop(@i - 1);
+}
+
+.mixin-loop(@iterations);
+
