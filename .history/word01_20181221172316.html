@@ -17,8 +17,8 @@
       href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/meanmenu.min.css" />
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/solarized-light.css" />
   </head>
 
@@ -39,51 +39,39 @@
     <main>
       <div class="character_title"><h2>言語紹介</h2></div>
       <div class="word_list">
-          <ul>
-              <li><a href="word01.html".html"><img src="img/character/character_list_stylus.png" alt="">
-              </a></li>
-          <li><a href="word02.html"><img src="img/character/character_list_sass.png" alt=""></a></li>
-          <li><a href="word03.html"><img src="img/character/character_list_less.png" alt=""></a></li>
-          <li><a href="word04.html"><img src="img/character/character_list_postcss.png" alt=""></a></li>
-            </ul>
+            <ul>
+                <li><a href="word01.html".html"><img src="img/character/character_list_stylus.png" alt="">
+                </a></li>
+            <li><a href="word02.html"><img src="img/character/character_list_sass.png" alt=""></a></li>
+            <li><a href="word03.html"><img src="img/character/character_list_less.png" alt=""></a></li>
+            <li><a href="word04.html"><img src="img/character/character_list_postcss.png" alt=""></a></li>
+                  </ul>
       </div>
       <div class="word_box">
-        <h3>Lessの特徴</h3>
+        <h3>Stylusの特徴</h3>
         <p>
-            LessはCSSプリプロセッサの一種や！<br>
-            「Leaner CSS」を略したもので「無駄のない」「効率的な」みたいな意味があるんよ。<br>
-            基本的記述方法はCssと同じなやけどScssと同じでネストという入れ子機能が使えるんや。<br>
-            特徴的なこととして他のプリプロセッサと違ってHtmlから直接読み込むことができるから一番レスポンスは早い！<br><br>
-            
-            実際に書いてみるとこんな感じや。
-            <br>
+          StylusはCSSプリプロセッサの一種だよ。<br>
+          開発者はnode.jsやpugを作ったTJ Holowaychukさん！<br><br>
+         
+         他のプリプロセッサと違ってルールにあまりとらわれないプリプロセッサなんだ。<br>
+         波括弧、セミコロン、コロン、カンマをつけてもつけなくてもコンパイルが通るから書き方を選ばないよ！<br>
+         実際に書いてみるね！
 
-        </p>
-        <h4><span>Css</span></h4>
+         <h4><span>Css</span></h4>
 
-        <pre><code>
+         <pre>
+          <code>
     .hoge {
         width: 100%
     }
-                  
+          
     .hoge p {
-        font-size: 26px
+        font-size: 24px
     }
-                </code>
-                </pre>
-                <h4><span>Less</span></h4>
-                <pre>
-                  <code>
-    .hoge{
-        width 100%
-        p{
-            font-size 26px
-        }
-    }
-                  </code>
-                </pre>  <p>
-                  基本的にはScssと同じ感じやけど他の機能がちょっと違うから下で紹介していくで。
-                </p>
+          </code>
+         </pre>
+         <h4><span>Stylus</span></h4>
+        </p>
       </div>
       <div class="word_box">
         <h3>インストール</h3>
@@ -111,12 +99,12 @@
                </pre>
         <h4><span>STEP02</span></h4>
         <p>
-          それでは実際にLessをインストールしていくよ！
+          それでは実際にStylusをインストールしていくよ！
           <br />ターミナルに下のコマンドを打とう！
         </p>
         <pre>
                     <code>
-    npm install less -g
+    npm install stylus -g
                     </code>
                    </pre>
         <p>
@@ -124,16 +112,17 @@
         </p>
         <pre>
                         <code>
-    lessc -v
+    stylus -V
+    // Vは大文字じゃないと動きません。
                         </code>
                        </pre>
         <p>インストールできていればこう表示されるよ！</p>
         <pre>
                     <code>
-    lessc 3.9.0 (Less Compiler) [JavaScript]
+    0.54.5
                     </code>
                    </pre>
-        <p>これにてLessのインストール作業は終了だよ！</p>
+        <p>これにてStylusのインストール作業は終了だよ！</p>
       </div>
 
       <h4 class="sub_title">機能紹介</h4>
@@ -146,13 +135,12 @@
         </p>
         <pre>
                 <code>
-    @main_color: #FCF6E5;
-    @main_width: 960px;
+    main_color = #FCF6E5
+    main_width = 960px
 
-    main{
-        background:@main_color;
-        width:@main_width;
-    }
+    main
+        background main_color
+        width main_width
                 </code>
                </pre>
         <p>コンパイル結果はこうなるよ！</p>
@@ -172,14 +160,13 @@
         </p>
         <pre>
             <code>
-    @check:true;
+    check = true
 
-    .foo when(@check = true){
-        width: 100%;
-    }
-    .foo when(@check = false){
-        width: 50%;
-    }
+    .foo
+        if check
+            width: 100%
+        else
+            width: 50%
             </code>
         </pre>
         <p>コンパイル結果はこうなるよ！</p>
@@ -198,13 +185,9 @@
         <p>同じものを何個も書かなくていいので便利！</p>
         <pre>
             <code>
-    .num(@n) when (@n < 4) {
-        .fizz@{n} {
-          margin: 1px * @n;
-        }
-        .num(@n + 1);
-    }
-    .num(1);
+    for num in 1..3
+        .fizz{num}
+            margin num px
             </code>
         </pre>
         <p>コンパイル結果はこうなるよ！</p>

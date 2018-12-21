@@ -48,92 +48,88 @@
             </ul>
       </div>
       <div class="word_box">
-        <h3>Lessの特徴</h3>
-        <p>
-            LessはCSSプリプロセッサの一種や！<br>
-            「Leaner CSS」を略したもので「無駄のない」「効率的な」みたいな意味があるんよ。<br>
-            基本的記述方法はCssと同じなやけどScssと同じでネストという入れ子機能が使えるんや。<br>
-            特徴的なこととして他のプリプロセッサと違ってHtmlから直接読み込むことができるから一番レスポンスは早い！<br><br>
-            
-            実際に書いてみるとこんな感じや。
-            <br>
+        <h3>Sassの特徴</h3>
+        <p><br><br>
 
+            ScssとはCSSプリプロセッサの一種です。<br>
+            「Sassy CSS」を略したもので直訳すると「かっこいいCSS」「イカしたCSS」となります。<br>
+            その名の通りCssを拡張したもので記述方法は基本的には同じです。<br>
+            ですがネストという入れ子機能をつかって書けるので効率的に書くことができます。<br>
+            では実際に書いて見ます。
         </p>
         <h4><span>Css</span></h4>
-
         <pre><code>
     .hoge {
         width: 100%
     }
-                  
+          
     .hoge p {
         font-size: 26px
     }
-                </code>
-                </pre>
-                <h4><span>Less</span></h4>
-                <pre>
-                  <code>
+        </code>
+        </pre>
+        <h4><span>Scss</span></h4>
+        <pre>
+          <code>
     .hoge{
         width 100%
-        p{
+    p{
             font-size 26px
         }
     }
-                  </code>
-                </pre>  <p>
-                  基本的にはScssと同じ感じやけど他の機能がちょっと違うから下で紹介していくで。
-                </p>
+            
+          </code>
+        </pre>
       </div>
       <div class="word_box">
         <h3>インストール</h3>
         <h4><span>STEP01</span></h4>
-        <p>まずは前提となるNode.jsをインストールするよ！</p>
+        <p>まずは前提となるRubyをインストールしましょう。</p>
         <div class="word_link">
-          <a href="https://nodejs.org/ja/">ダウンロード先リンク</a>
+          <a href="https://www.ruby-lang.org/ja/">ダウンロード先リンク</a>
         </div>
         <p>
-          インストールが出来たらちゃんとインストール出来ているか確認するためにターミナルでこのコマンドを打つよ！
+          インストールが出来たら、インストール出来ているか確認するためにターミナルでこのコマンドを打ちます。
         </p>
         
         <pre>
             <code>
-    node -v
+    ruby -v
             </code>
-           </pre>
+</pre>
 
-        <p>正常にインストールされていれば下のようにバージョン情報が出るよ</p>
+        <p>正常にインストールされていれば下のようにバージョン情報が出ます。</p>
         <pre>
                 <code>
-    v10.14.2
+    ruby 2.3.7p456
     // インストール時点での最新版のバージョン情報が出ます。
                 </code>
                </pre>
         <h4><span>STEP02</span></h4>
         <p>
-          それでは実際にLessをインストールしていくよ！
-          <br />ターミナルに下のコマンドを打とう！
+          それでは実際にSassをインストールしていきましょう。
+          <br />ターミナルに下のコマンドを打ちましょう。
         </p>
         <pre>
                     <code>
-    npm install less -g
+    gem install sass
                     </code>
                    </pre>
         <p>
-          インストールができたらちゃんとできてるか確認！ターミナルに下のコマンドを打つよ！
+          インストールができたらちゃんとできてるか確認します。ターミナルに下のコマンドを打ちましょう。
         </p>
         <pre>
                         <code>
-    lessc -v
+    sass -v
                         </code>
                        </pre>
-        <p>インストールできていればこう表示されるよ！</p>
+        <p>インストールできていればこう表示されるはずです。</p>
         <pre>
                     <code>
-    lessc 3.9.0 (Less Compiler) [JavaScript]
+    Ruby Sass 3.5.7
                     </code>
                    </pre>
-        <p>これにてLessのインストール作業は終了だよ！</p>
+        <p>これにてSassのインストール作業は終了です。</p>
       </div>
 
       <h4 class="sub_title">機能紹介</h4>
@@ -146,21 +142,21 @@
         </p>
         <pre>
                 <code>
-    @main_color: #FCF6E5;
-    @main_width: 960px;
+    $main_color: #FCF6E5;
+    $main_width: 960px;
 
     main{
-        background:@main_color;
-        width:@main_width;
+      background: $main_color;
+      width: $main_width;
     }
                 </code>
                </pre>
         <p>コンパイル結果はこうなるよ！</p>
         <pre>
     <code>
-    main{
-        background:#FCF6E5;
-        width: 960px;
+    main {
+      background: #FCF6E5;
+      width: 960px;
     }
                     </code>
                    </pre>
@@ -172,13 +168,14 @@
         </p>
         <pre>
             <code>
-    @check:true;
+    $check: true;
 
-    .foo when(@check = true){
-        width: 100%;
-    }
-    .foo when(@check = false){
-        width: 50%;
+    .foo{
+        @if $check == true {
+            width: 100%;
+        }@else{
+            width: 50%;
+        }
     }
             </code>
         </pre>
@@ -198,13 +195,11 @@
         <p>同じものを何個も書かなくていいので便利！</p>
         <pre>
             <code>
-    .num(@n) when (@n < 4) {
-        .fizz@{n} {
-          margin: 1px * @n;
+    @for $i from 1 to 4 {
+        .fizz#{$i} {
+            width: $i + px;
         }
-        .num(@n + 1);
     }
-    .num(1);
             </code>
         </pre>
         <p>コンパイル結果はこうなるよ！</p>
