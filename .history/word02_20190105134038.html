@@ -48,92 +48,87 @@
             </ul>
       </div>
       <div class="word_box">
-        <h3>Lessの特徴</h3>
+        <h3>Sassの特徴</h3>
         <p>
-            LessはCSSプリプロセッサの一種や！<br>
-            「Leaner CSS」を略したもので「無駄のない」「効率的な」みたいな意味があるんよ。<br>
-            基本的記述方法はCssと同じなやけどScssと同じでネストという入れ子機能が使えるんや。<br>
-            特徴的なこととして他のプリプロセッサと違ってHtmlから直接読み込むことができるから一番レスポンスは早い！<br><br>
-            
-            実際に書いてみるとこんな感じや。
-            <br>
-
+            ScssとはCSSプリプロセッサの一種です。<br>
+            「Sassy CSS」を略したもので直訳すると「かっこいいCSS」「イカしたCSS」となります。<br>
+            その名の通りCssを拡張したもので記述方法は基本的には同じです。<br>
+            ですがネストという入れ子機能をつかって書けるので効率的に書くことができます。<br>
+            では実際に書いて見ます。
         </p>
         <h4><span>Css</span></h4>
-
         <pre><code>
     .hoge {
         width: 100%
     }
-                  
+          
     .hoge p {
         font-size: 26px
     }
-                </code>
-                </pre>
-                <h4><span>Less</span></h4>
-                <pre>
-                  <code>
+        </code>
+        </pre>
+        <h4><span>Scss</span></h4>
+        <pre>
+          <code>
     .hoge{
         width 100%
         p{
             font-size 26px
         }
     }
-                  </code>
-                </pre>  <p>
-                  基本的にはScssと同じ感じやけど他の機能がちょっと違うから下で紹介していくで。
-                </p>
+          </code>
+        </pre>
+        <p>このようにCssに非常に似た書き方もできますし普通にCssの記法を用いて書いてもコンパイルは通るので移行は簡単でしょう。</p>
       </div>
       <div class="word_box">
         <h3>インストール</h3>
         <h4><span>STEP01</span></h4>
-        <p>まず、前提となるNode.jsをインストールするで。</p>
+        <p>まずは前提となるRubyをインストールしましょう。</p>
         <div class="word_link">
-          <a href="https://nodejs.org/ja/">ダウンロード先リンク</a>
+          <a href="https://www.ruby-lang.org/ja/">ダウンロード先リンク</a>
         </div>
         <p>
-          インストールが出来たらちゃんとインストール出来てるか確認するためにターミナルでこのコマンドを打つで！
+          インストールが出来たら、インストール出来ているか確認するためにターミナルでこのコマンドを打ちます。
         </p>
         
         <pre>
             <code>
-    node -v
+    ruby -v
             </code>
-           </pre>
+</pre>
 
-        <p>正常にインストールされとったら下のようにバージョン情報が出るで</p>
+        <p>正常にインストールされていれば下のようにバージョン情報が出ます。</p>
         <pre>
                 <code>
-    v10.14.2
+    ruby 2.3.7p456
     // インストール時点での最新版のバージョン情報が出ます。
                 </code>
                </pre>
         <h4><span>STEP02</span></h4>
         <p>
-          ほな実際にLessをインストールしていくで！
-          <br />ターミナルに下のコマンドを打とう！
+          それでは実際にSassをインストールしていきましょう。
+          <br />ターミナルに下のコマンドを打ちましょう。
         </p>
         <pre>
                     <code>
-    npm install less -g
+    gem install sass
                     </code>
                    </pre>
         <p>
-          インストールができたらちゃんとできてるか確認する！ターミナルに下のコマンドを打つで！
+          インストールができたらちゃんとできてるか確認します。ターミナルに下のコマンドを打ちましょう。
         </p>
         <pre>
                         <code>
-    lessc -v
+    sass -v
                         </code>
                        </pre>
-        <p>インストールできとったらこう表示されるで！</p>
+        <p>インストールできていればこう表示されるはずです。</p>
         <pre>
                     <code>
-    lessc 3.9.0 (Less Compiler) [JavaScript]
+    Ruby Sass 3.5.7
                     </code>
                    </pre>
-        <p>これでLessのインストール作業は終了やで！</p>
+        <p>これにてSassのインストール作業は終了です。</p>
       </div>
 
       <h4 class="sub_title">機能紹介</h4>
@@ -141,18 +136,16 @@
           <h3>Mixin</h3>
           <p>
             ここではMixinの書き方を教えます。
-            <br/>Mixinは別のところで定義したスタイルを別のところで呼び出せる機能です。<br>定義したものをそのまま呼び出せます。
+            <br/>Mixinは別のところで定義したスタイルを別のところで呼び出せる機能です。<br>()をつけることでMixinを定義できます。
           </p>
           <pre>
                   <code>
-    .fizz{
-      font-size :20px;
-      border-radius :20px;
-    }
-
-    .buzz{
-      .fizz;
-    }
+      fizz()
+          font-size 20px
+          border-radius 20px
+                
+      .buzz
+          fizz()
                   </code>
                  </pre>
           <p>コンパイル結果はこうなります。</p>
@@ -166,14 +159,13 @@
   </pre>
     <p>()の中に引数を入れることで値を渡すこともできます。</p>
     <pre>
+  
     <code>
-    .fizz(@num){
-        font-size :@num;
-        border-radius :@num;
-    }
-    .buzz{
-        .fizz(20px);
-    }
+      foo(num)
+          font-size num
+          border-radius num
+      .bar
+          fizz(20px)
     </code>
   </pre>
   <p>コンパイル結果はこうなります。</p>
@@ -190,26 +182,26 @@
       <div class="word_box">
         <h3>変数</h3>
         <p>
-          ここでは変数の書き方を教えるで。
-          <br />変数に値を入れとけば、変数名で値を参照できるで！
+          ここでは変数の書き方を教えます。
+          <br />変数に値を入れておけば、変数名で値を参照することができます。
         </p>
         <pre>
                 <code>
-    @main_color: #FCF6E5;
-    @main_width: 960px;
+    $main_color: #FCF6E5;
+    $main_width: 960px;
 
     main{
-        background:@main_color;
-        width:@main_width;
+      background: $main_color;
+      width: $main_width;
     }
                 </code>
                </pre>
-        <p>コンパイル結果はこうなるで！</p>
+        <p>コンパイル結果はこうなります。</p>
         <pre>
     <code>
-    main{
-        background:#FCF6E5;
-        width: 960px;
+    main {
+      background: #FCF6E5;
+      width: 960px;
     }
                     </code>
                    </pre>
@@ -217,21 +209,22 @@
       </div>
       <div class="word_box">
         <h3>条件文</h3>
-        <p>条件文は一定の条件下で動く動かへんを決める文なんやで！<br>Lessではwhenを使うて、こないな風に書くで！
+        <p>条件文は一定の条件下で動く動かないを決める文です。<br>Scssではifを使って、このように書きます。
         </p>
         <pre>
             <code>
-    @check:true;
+    $check: true;
 
-    .foo when(@check = true){
-        width: 100%;
-    }
-    .foo when(@check = false){
-        width: 50%;
+    .foo{
+        @if $check == true {
+            width: 100%;
+        }@else{
+            width: 50%;
+        }
     }
             </code>
         </pre>
-        <p>コンパイル結果はこうなるで！</p>
+        <p>コンパイル結果はこうなります。</p>
         <pre>
             <code>
     .foo {
@@ -243,21 +236,19 @@
       </div>
       <div class="word_box">
         <h3>繰り返し文</h3>
-        <p>繰り返し文を使うと繰り返し処理を書けるで！</p>
-        <p>同じものを何個も書かんでええさかいめっちゃ便利！</p>
-        <p>Lessではループ文を書くのはちょい特殊でWhenを使うて実装するで！</p>
+        <p>繰り返し文は使うと繰り返し処理を書くことができる文です。</p>
+        <p>同じものを何個も書かなくていいので時間の短縮になります。</p>
+        <p>Scssではforを使って、書くことができます。</p>
         <pre>
             <code>
-    .num(@n) when (@n < 4) {
-        .fizz@{n} {
-          margin: 1px * @n;
+    @for $i from 1 to 4 {
+        .fizz#{$i} {
+            width: $i + px;
         }
-        .num(@n + 1);
     }
-    .num(1);
             </code>
         </pre>
-        <p>コンパイル結果はこうなるで！</p>
+        <p>コンパイル結果はこうなります。</p>
         <pre>
             <code>
     .fizz1 {
@@ -314,5 +305,4 @@
 
   gtag('config', 'UA-131463476-1');
 </script>
-  </body>
 </html>

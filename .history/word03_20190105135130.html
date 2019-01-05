@@ -167,12 +167,12 @@
     <p>()の中に引数を入れることで値を渡すこともできます。</p>
     <pre>
     <code>
-    .fizz(@num){
-        font-size :@num;
-        border-radius :@num;
+    @mixin foo($num){
+        font-size:$num;
+        border-radius:$num;
     }
-    .buzz{
-        .fizz(20px);
+    .bar{
+        @include foo(20px);
     }
     </code>
   </pre>
