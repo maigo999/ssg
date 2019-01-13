@@ -16,24 +16,30 @@ body
     background-image url('../img/backloop.png')
     background-repeat repeat
     .mean-bar
-        height 50px
-        background: #FFFAF1
+        height 60px
+        background url("/img/ssglogo.svg")
+        background-size: contain
+        object-fit: scale-down
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        
         .mean-nav
-            background: #FFFAF1
+            background:url('../img/backloop.png')
+            margin-top: 65px
             li:last-child
-                border-bottom: 1px solid #678274
+                border-bottom: 1px solid #32C4FE
             ul li a
-                color: #678274
+                color: #32C4FE
                 font-size: 20px
                 text-align: center
-                border-top 1px solid #678274
+                border-top 1px solid #32C4FE
 
         .meanmenu-reveal 
-            margin-top: 4px
+            margin-top: 13px
             span
-                background: #678274
+                background: #32C4FE
         .meanclose
-            color: #678274
+            color: #32C4FE
     header
         margin auto
         width 960px
@@ -104,11 +110,19 @@ body
 
                 
 
-.top_visual
-    background: #bcf3ff
-    width: 100vw
-    height 100vh
 
+.top_visual
+    width: 100vw
+    height auto
+    img
+        width: 100%
+    .Top_sp
+        display: none
+    @media(max-width: 680px)
+        .Top_pc
+            display: none
+        .Top_sp
+            display: block
 .top_box
     display: flex
     justify-content: space-around
@@ -127,6 +141,7 @@ body
     @media(max-width: 680px)
         width: 100%
         height auto
+        margin-top: 30px
     .box_twitter
         width: 400px
         height 500px
@@ -267,6 +282,20 @@ footer
                 text-decoration: none
                 background: white
                 border: 5px solid #ffd1ae
+                overflow: hidden
+                display: flex
+                justify-content: center
+                align-items: center
+                &:hover
+                    overflow: visible
+                img
+                    width: 100%
+                    height 100%
+                    &:hover
+                        width: 130%
+                        height 130%
+                        border-radius: 50%
+                        transition: 1s
 
 .character_box
     display: flex
@@ -328,16 +357,74 @@ footer
     border: 5px dotted #ffd1ae
     background: rgba(255,255,255,0.8)
     margin-left: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    position relative
+    img
+        width: auto
+        height 90%
     @media(max-width: 680px)
-        width: 90%
+        width: 100%
         margin-left: 0
         margin-top: 30px
+    .change_scss
+        position absolute
+        top 50px
+        right: 30px
+        text-align: center
+        border-radius: 50px
+        font-size 2rem
+        width: 80px
+        height: 80px
+        border: 5px dotted #ffd1ae
+        overflow hidden
+        a
+            width: 100%
+            height 100%
+            img
+                width: 100%
+                height 100%
 
+.word_thumbnail
+    display: flex
+    justify-content: center
+    width: 500px
+    margin: auto
+    align-items: center
+    margin-top: 30px
+    position: relative
+    img
+        height: 300px
+    h2
+        font-size 5rem
+        font-family: "corp"
+        color: #696969
+    .change_scss
+        position absolute
+        top 10px
+        right: 30px
+        text-align: center
+        border-radius: 50px
+        font-size 2rem
+        width: 80px
+        height: 80px
+        border: 5px dotted #ffd1ae
+        overflow hidden
+        a
+            width: 100%
+            height 100%
+            img
+                width: 100%
+                height 100%
+    @media(max-width: 680px)
+        width: 100%
 .word_box
     width: 960px;
     height: auto
     background: white
     margin: 50px auto 50px auto
+    padding-top: 50px
     border: #ffd1ae 5px solid
     border-radius: 20px
     position relative
@@ -373,6 +460,7 @@ footer
         color: #696969
         &:last-child
             margin-bottom: 80px
+            
     pre
         width: 80%
         margin: auto
@@ -564,6 +652,22 @@ footer
                 text-decoration: none
                 background: white
                 border: 5px solid #ffd1ae
+                overflow: hidden
+                display: flex
+                justify-content: center
+                align-items: center
+                &:hover
+                    overflow: visible
+                img
+                    width: 100%
+                    height 100%
+                    &:hover
+                        width: 130%
+                        height 130%
+                        border-radius: 50%
+                        transition: 1s
+
+                
 
 
 
