@@ -7,8 +7,9 @@ $about = #5f8373
 @font-face
     font-family: 'corp'
     src: url("../font/corp_round_v1.ttf")
-
-
+@font-face
+    font-family: 'makinas'
+    src: url("../font/Makinas-4-Square.otf")
 html
     font-size 62.5%
 
@@ -16,11 +17,16 @@ body
     background-image url('../img/backloop.png')
     background-repeat repeat
     .mean-bar
-        height 50px
+        height 60px
         background url("/img/ssglogo.svg")
         background-size: contain
+        object-fit: scale-down
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        
         .mean-nav
             background:url('../img/backloop.png')
+            margin-top: 65px
             li:last-child
                 border-bottom: 1px solid #32C4FE
             ul li a
@@ -30,7 +36,7 @@ body
                 border-top 1px solid #32C4FE
 
         .meanmenu-reveal 
-            margin-top: 4px
+            margin-top: 13px
             span
                 background: #32C4FE
         .meanclose
@@ -255,7 +261,7 @@ footer
     @media(max-width: 680px)
         width: 400px
         height: auto
-        margin-top: 20px
+        margin: 20px auto 0 auto
     ul
         display flex
         justify-content: center
@@ -277,6 +283,20 @@ footer
                 text-decoration: none
                 background: white
                 border: 5px solid #ffd1ae
+                overflow: hidden
+                display: flex
+                justify-content: center
+                align-items: center
+                &:hover
+                    overflow: visible
+                img
+                    width: 100%
+                    height 100%
+                    &:hover
+                        width: 130%
+                        height 130%
+                        border-radius: 50%
+                        transition: 1s
 
 .character_box
     display: flex
@@ -338,16 +358,74 @@ footer
     border: 5px dotted #ffd1ae
     background: rgba(255,255,255,0.8)
     margin-left: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    position relative
+    img
+        width: auto
+        height 90%
     @media(max-width: 680px)
-        width: 90%
+        width: 100%
         margin-left: 0
         margin-top: 30px
+    .change_scss
+        position absolute
+        top 50px
+        right: 30px
+        text-align: center
+        border-radius: 50px
+        font-size 2rem
+        width: 80px
+        height: 80px
+        border: 5px dotted #ffd1ae
+        overflow hidden
+        a
+            width: 100%
+            height 100%
+            img
+                width: 100%
+                height 100%
 
+.word_thumbnail
+    display: flex
+    justify-content: center
+    width: 500px
+    margin: auto
+    align-items: center
+    margin-top: 30px
+    position: relative
+    img
+        height: 300px
+    h2
+        font-size 5rem
+        font-family: "corp"
+        color: #696969
+    .change_scss
+        position absolute
+        top 10px
+        right: 30px
+        text-align: center
+        border-radius: 50px
+        font-size 2rem
+        width: 80px
+        height: 80px
+        border: 5px dotted #ffd1ae
+        overflow hidden
+        a
+            width: 100%
+            height 100%
+            img
+                width: 100%
+                height 100%
+    @media(max-width: 680px)
+        width: 100%
 .word_box
     width: 960px;
     height: auto
     background: white
     margin: 50px auto 50px auto
+    padding-top: 50px
     border: #ffd1ae 5px solid
     border-radius: 20px
     position relative
@@ -383,6 +461,7 @@ footer
         color: #696969
         &:last-child
             margin-bottom: 80px
+            
     pre
         width: 80%
         margin: auto
@@ -547,15 +626,17 @@ footer
     margin: auto
     margin-top: 80px
     @media(max-width: 960px)
-        transform: scale(0.8)
         width: 100%
+        transform: scale(0.8)
+        margin: 30px auto 0 auto
     @media(max-width: 680px)
-        width: 300px
+        width: 400px
         height: auto
-        margin-top: 20px
+        margin: 20px auto 0 auto
     ul
         display flex
         justify-content: center
+        margin: auto
         @media(max-width: 680px)
             flex-wrap: wrap
         li
@@ -574,7 +655,19 @@ footer
                 text-decoration: none
                 background: white
                 border: 5px solid #ffd1ae
-
-
+                overflow: hidden
+                display: flex
+                justify-content: center
+                align-items: center
+                &:hover
+                    overflow: visible
+                img
+                    width: 100%
+                    height 100%
+                    &:hover
+                        width: 130%
+                        height 130%
+                        border-radius: 50%
+                        transition: 1s
 
 
