@@ -435,28 +435,25 @@ PostCssはWebpackやGruntやGulpなど様々なタスクランナーで使うこ
         <h4><span>STEP04</span></h4>
         <p>次にgulpの設定とpostcssの設定をするよ！<br>
         この設定では試しにpostcss-simple-varsを使ってみるね、postcss-simple-varsの詳細については下で解説するよ！<br>まずはgulpfile.jsというファイルを作るよ！<br><br>gulpfile.js</p>
-        <pre><code>
+        <!-- <pre><code>
     const postcss = require('gulp-postcss');
     const gulp = require('gulp');
 
         gulp.task('css', function () {
-        return gulp.src('main.css')
-        // 直下のmain.cssを探す
-            .pipe(postcss([ require('postcss-simple-vars') ])) 
-            // プラグインをタスクに追加
-            .pipe(gulp.dest('./dest'));
-            // destフォルダに出力
+        return gulp.src('main.css') //直下のmain.cssを探す。
+            .pipe(postcss([ require('postcss-simple-vars') ]))//プラグインをタスクに追加
+            .pipe(gulp.dest('./dest')); //destフォルダに出力
         });
-        </code></pre>
+        </code></pre> -->
         <p>次はpostcss.config.jsというファイルを作るよ！<br><br>postcss.config.js</p>
-        <pre><code>
+        <!-- <!-- <pre><code> -->
     module.exports = {
         plugins: [
             require('postcss-simple-vars')
             //ここに入れるプラグインを記述
         ]
     }
-        </code></pre>
+        </code></pre> -->
         <p>これで設定は完了！<br>ここまで来たらgulpを動かすだけ！</p>
         <pre><code>
     gulp [タスク名]
@@ -465,33 +462,75 @@ PostCssはWebpackやGruntやGulpなど様々なタスクランナーで使うこ
         </p>
       </div>
 
-      <h4 class="sub_title">プラグイン紹介</h4>
+      <h4 class="sub_title">機能紹介</h4>
+      <div class="word_box">
+          <h3>Mixin</h3>
+          <p>
+            ここではMixinの書き方を教えます。
+            <br/>Mixinは別のところで定義したスタイルを別のところで呼び出せる機能です。<br>定義したものをそのまま呼び出せます。
+          </p>
+          <pre>
+                  <code>
+    .fizz{
+      font-size :20px;
+      border-radius :20px;
+    }
 
+    .buzz{
+      .fizz;
+    }
+                  </code>
+                 </pre>
+          <p>コンパイル結果はこうなります。</p>
+          <pre>
+      <code>
+      .buzz {
+          font-size: 20px;
+          border-radius: 20px;
+      }
+                      </code>
+  </pre>
+    <p>()の中に引数を入れることで値を渡すこともできます。</p>
+    <pre>
+    <code>
+    .fizz(@num){
+        font-size :@num;
+        border-radius :@num;
+    }
+    .buzz{
+        .fizz(20px);
+    }
+    </code>
+  </pre>
+  <p>コンパイル結果はこうなります。</p>
+  
+  <pre>
+      <code>
+      .bar {
+          font-size: 20px;
+          border-radius: 20px;
+      }
+      </code>
+  </pre>
+        </div>
       <div class="word_box">
         <h3>変数</h3>
         <p>
-          変数を使うためには"postcss-simple-vars"を入れよう。
+          ここでは変数の書き方を教えるで。
+          <br />変数に値を入れとけば、変数名で値を参照できるで！
         </p>
-        <p>インストールは下のコマンドを打とう。
-        </p>
-        <pre>
-          <code>
-    npm install postcss-simple-vars
-          </code>
-        </pre>
-        <p>このプラグインを入れると$を使ったシンプルな変数が使えるよ。</p>
         <pre>
                 <code>
-    $main_color: #FCF6E5;
-    $main_width: 960px;
-                
+    @main_color: #FCF6E5;
+    @main_width: 960px;
+
     main{
-        background: $main_color;
-        width: $main_width;
+        background:@main_color;
+        width:@main_width;
     }
                 </code>
                </pre>
-        <p>コンパイル結果はこうなるよ！</p>
+        <p>コンパイル結果はこうなるで！</p>
         <pre>
     <code>
     main{
@@ -499,33 +538,26 @@ PostCssはWebpackやGruntやGulpなど様々なタスクランナーで使うこ
         width: 960px;
     }
                     </code>
-    </pre>
+                   </pre>
 
       </div>
       <div class="word_box">
         <h3>条件文</h3>
-        <p>条件文は一定の条件下で動く動かないを決める文なんだよ！<br>条件文を使うためには"postcss-conditionals"を入れよう。
+        <p>条件文は一定の条件下で動く動かへんを決める文なんやで！<br>Lessではwhenを使うて、こないな風に書くで！
         </p>
-        <p>インストールは下のコマンドを打とう。
-          </p>
-          <pre>
-            <code>
-    npm install postcss-conditionals
-            </code>
-          </pre>
         <pre>
             <code>
-    $check: true;
-    .foo {
-      @if $check == true {
+    @check:true;
+
+    .foo when(@check = true){
         width: 100%;
-      } @else {
+    }
+    .foo when(@check = false){
         width: 50%;
-      }
     }
             </code>
         </pre>
-        <p>コンパイル結果はこうなるよ！</p>
+        <p>コンパイル結果はこうなるで！</p>
         <pre>
             <code>
     .foo {
@@ -536,27 +568,22 @@ PostCssはWebpackやGruntやGulpなど様々なタスクランナーで使うこ
 
       </div>
       <div class="word_box">
-        <h3>ループ文</h3>
-        <p>ループ文を使うためには"postcss-for"を入れよう。</p>
-        <p>同じものを何個も書かなくていいので便利！</p>
-        <p>インストールは下のコマンドを打とう。
-          </p>
-          <pre>
-            <code>
-    npm install postcss-for
-            </code>
-          </pre>
-          <p>このプラグインを使うと@forを使ったループ文が書けるよ。</p>
+        <h3>繰り返し文</h3>
+        <p>繰り返し文を使うと繰り返し処理を書けるで！</p>
+        <p>同じものを何個も書かんでええさかいめっちゃ便利！</p>
+        <p>Lessではループ文を書くのはちょい特殊でWhenを使うて実装するで！</p>
         <pre>
             <code>
-    @for $num from 1 to 3 {
-        .fizz$num {
-          width: $(num)px;
+    .num(@n) when (@n < 4) {
+        .fizz@{n} {
+          margin: 1px * @n;
         }
+        .num(@n + 1);
     }
+    .num(1);
             </code>
         </pre>
-        <p>コンパイル結果はこうなるよ！</p>
+        <p>コンパイル結果はこうなるで！</p>
         <pre>
             <code>
     .fizz1 {
@@ -604,6 +631,7 @@ PostCssはWebpackやGruntやGulpなど様々なタスクランナーで使うこ
     <script>
       hljs.initHighlightingOnLoad();
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131463476-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
