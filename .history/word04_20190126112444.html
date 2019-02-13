@@ -441,12 +441,12 @@ PostCssはWebpackやGruntやGulpなど様々なタスクランナーで使うこ
     const gulp = require('gulp');
 
     gulp.task('css', function (){
-        return gulp.src('main.css')
-        // 直下のmain.cssを探す
-        .pipe(postcss([require('postcss-simple-vars')]))
-        // プラグインをタスクに追加
-        .pipe(gulp.dest('./dest'));
-        // destフォルダに出力
+    return gulp.src('main.css')
+    // 直下のmain.cssを探す
+    .pipe(postcss([require('postcss-simple-vars')]))
+    // プラグインをタスクに追加
+    .pipe(gulp.dest('./dest'));
+    // destフォルダに出力
     });
     </code>
 </pre>
