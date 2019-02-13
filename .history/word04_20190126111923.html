@@ -440,14 +440,14 @@ PostCssはWebpackやGruntやGulpなど様々なタスクランナーで使うこ
     const postcss = require('gulp-postcss');
     const gulp = require('gulp');
 
-    gulp.task('css', function (){
+        gulp.task('css', function () {
         return gulp.src('main.css')
         // 直下のmain.cssを探す
-        .pipe(postcss([require('postcss-simple-vars')]))
-        // プラグインをタスクに追加
-        .pipe(gulp.dest('./dest'));
-        // destフォルダに出力
-    });
+            .pipe(postcss([ require('postcss-simple-vars') ]))
+            // プラグインをタスクに追加
+            .pipe(gulp.dest('./dest'));
+            // destフォルダに出力
+        });
     </code>
 </pre>
         <p>次はpostcss.config.jsというファイルを作るよ！<br><br>postcss.config.js</p>
@@ -486,7 +486,7 @@ PostCssはWebpackやGruntやGulpなど様々なタスクランナーで使うこ
                 <code>
     $main_color: #FCF6E5;
     $main_width: 960px;
-
+                
     main{
         background: $main_color;
         width: $main_width;
